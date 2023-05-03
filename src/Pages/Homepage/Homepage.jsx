@@ -11,7 +11,6 @@ const Homepage = () => {
     return (
         <div>
             <Banner></Banner>
-            {/* <Outlet chefs={chefs}></Outlet> */}
             <Chefs chefs = {chefs}></Chefs>
         </div>
     );
