@@ -5,7 +5,6 @@ const Chefs = (params) => {
 
     const { chefs } = params;
 
-    console.log(chefs);
     return (
         <div>
             <h3></h3>

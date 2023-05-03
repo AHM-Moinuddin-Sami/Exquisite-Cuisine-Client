@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Card = (params) => {
     const { id,name, photo, years, likes, recipes } = params;
-    console.log(photo)
+    
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl">
