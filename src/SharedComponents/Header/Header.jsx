@@ -1,27 +1,33 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Header = () => {
 
     const { user } = useContext(AuthContext);
 
+    const location = useLocation();
+
     return (
-        <div>
+        <div className='flex justify-between items-center p-5 bg-purple-300'>
 
             <Link to='/' className=' text-6xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600'> Exquisite Cuisine</Link>
 
-            <Link>Home</Link>
+            <div className='grid grid-cols-2 tabs gap-6'>
+                <Link to='/' className={`tab tab-bordered text-2xl ${location.pathname === '/' ? 'tab-active':''}`}>Home</Link>
 
-            <Link>Blog</Link>
+                <Link to='/blog' className={`tab tab-bordered text-2xl ${location.pathname === '/blog' ? 'tab-active':''}`}>Blog</Link>
+            </div>
 
             {
                 user ?
-                    <><h3>{user}</h3>
-                        <Link to='/login'><button>Login</button></Link></>
-                        :
-                        <>
-                        <Link to='/logout'><button>Logout</button></Link></>
+                    <div className='flex text-2xl gap-3'>
+                        <h3>{user}</h3>
+                        <Link to='/login'><button>Login</button></Link>
+                    </div>
+                    :
+                    <>
+                        <Link className='text-2xl' to='/logout'><button>Logout</button></Link></>
             }
 
         </div>
