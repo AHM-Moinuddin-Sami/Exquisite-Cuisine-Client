@@ -27,7 +27,7 @@ const Header = () => {
                     </div>
                     :
                     <>
-                        <Link className='text-2xl' to='/logout'><button>Logout</button></Link></>
+                        <Link className='text-2xl' to='/'><button>Logout</button></Link></>
             }
 
         </div>
