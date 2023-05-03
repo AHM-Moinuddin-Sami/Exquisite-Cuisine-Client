@@ -16,6 +16,8 @@ const RecipeTabContent = ({ name, ingredients, method, rating, img }) => {
                 </div>
                 <h3>Cooking Method: {method} </h3>
                 <h3>Rating: {rating}</h3>
+
+                <button>Favourite</button>
             </div>
         </div>
     );

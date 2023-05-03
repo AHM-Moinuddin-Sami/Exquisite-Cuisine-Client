@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import RecipeTabContent from './RecipeTabContent/RecipeTabContent';
 import RecipeTab from './RecipeTab/RecipeTab';
 
-const Recipes = ({ chefDetails }) => {
-
-    const { recipes } = chefDetails;
+const Recipes = ({ recipes }) => {
 
     const [activeTab, setActiveTab] = useState(0);
 
@@ -16,7 +14,7 @@ const Recipes = ({ chefDetails }) => {
     console.log(recipes);
 
     return (
-        <div id='tab-content' className={`flex flex-col p-5 w-8/12 mx-auto my-10 border-2 border-gray-300 h-contain`}>
+        <div id='tab-content' className={`flex flex-col p-5 w-8/12 mx-auto my-10 border-2 bg-white rounded border-gray-300 h-contain`}>
             <div className="flex border-b-2 border-gray-300">
                 {recipes.map((recipe, index) => (
                     <RecipeTab

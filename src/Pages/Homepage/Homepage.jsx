@@ -11,7 +11,9 @@ const Homepage = () => {
     return (
         <div>
             <Banner></Banner>
-            <Chefs chefs = {chefs}></Chefs>
+            <div className='w-11/12 py-6 mx-auto'>
+                <Chefs chefs={chefs}></Chefs>
+            </div>
         </div>
     );
 };

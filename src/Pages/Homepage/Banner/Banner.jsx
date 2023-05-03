@@ -20,7 +20,7 @@ function Banner() {
     }, [activeIndex]);
 
     return (
-        <div className="relative w-full h-[90vh]">
+        <div className="relative w-full h-[100vh]">
             {images.map((image, index) => (
                 <img
                     key={index}
@@ -34,7 +34,7 @@ function Banner() {
             <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-transparent to-black opacity-70"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <h1 className="text-white text-4xl font-semibold">Welcome to <span className='font-serif font-normal text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600'>Exquisite Cuisine</span>!</h1>
-                <h1 className="text-white text-4xl font-semibold">Here you can find authentic Japanese recipes from renowned chefs.</h1>
+                <h1 className="text-white text-4xl font-semibold">Here you can find authentic Japanese recipes from world renowned chefs!</h1>
             </div>
         </div>
     );

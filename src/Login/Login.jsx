@@ -52,7 +52,7 @@ const Login = () => {
     }
 
     return (
-        <div className='mx-auto w-11/12 md:w-1/2 mb-4'>
+        <div className='mx-auto w-11/12 md:w-1/2 mb-4 bg-white p-10 rounded mt-16'>
             <form onSubmit={handleLogin} className="form-control">
                 <label className="label">
                     <span className="label-text text-xl">Your Email</span>
