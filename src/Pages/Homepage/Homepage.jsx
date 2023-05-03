@@ -1,17 +1,18 @@
 import React from 'react';
 import Banner from './Banner/Banner';
-import Cards from './Cards/Cards';
-import { useLoaderData } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
+import Chefs from './Chefs/Chefs';
 
 
 
 const Homepage = () => {
     const chefs = useLoaderData();
-    
+
     return (
         <div>
             <Banner></Banner>
-            <Cards chefs = {chefs}></Cards>
+            {/* <Outlet chefs={chefs}></Outlet> */}
+            <Chefs chefs = {chefs}></Chefs>
         </div>
     );
 };
