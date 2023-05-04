@@ -6,7 +6,7 @@ const ChefBanner = ({chefDetails}) => {
     return (
         <div className="card rounded-none lg:card-side bg-base-100 shadow-xl">
             <figure><img src={chef_picture} className='h-[70vh]' /></figure>
-            <div className='w-8/12 pl-10 flex flex-col gap-3 text-xl'>
+            <div className='w-8/12 pl-10 flex flex-col justify-center gap-3 text-xl'>
                 <h2 className="card-title text-3xl">{chef_name}</h2>
                 <h2><span className='font-semibold'>Biography: </span>{bio}</h2>
                 <h2><span className='font-semibold'>Years of Experience: </span>{years_of_experience}</h2>

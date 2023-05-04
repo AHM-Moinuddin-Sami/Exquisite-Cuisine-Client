@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../../../Providers/AuthProvider';
 
 const RecipeTabContent = ({ name, ingredients, method, rating, img }) => {
+    const { user } = useContext(AuthContext);
+
+    
     return (
         <div className=''>
             <img className='w-full h-[50vh] rounded object-cover' src={img} />

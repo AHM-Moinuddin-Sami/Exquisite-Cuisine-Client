@@ -13,7 +13,7 @@ const Card = (params) => {
                     <p>Years of Experience: {years}</p>
                     <p>Likes: {likes}</p>
                     <p>Number of Recipes: {recipes}</p>
-                    <Link to={`/${id}`}>View recipes</Link>
+                    <Link className='w-full' to={`/${id}`}><button className='px-6 py-2 bg-gradient-to-b from-red-500 to-orange-500 hover:from-red-600 active:from-red-800 hover:to-orange-600 active:to-orange-800 rounded text-white'>View recipes</button></Link>
                     
                 </div>
             </div>

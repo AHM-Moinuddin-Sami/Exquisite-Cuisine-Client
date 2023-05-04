@@ -102,16 +102,17 @@ const Login = () => {
                 {
                     errorMessage &&
                     <h3 className='text-red-500'>{errorMessage}</h3>
-                }                
+                }
 
                 <h3 className='mb-3'>Don't have an account? <Link className='text-blue-400' to='/register'>Register Now!</Link></h3>
 
             </form>
 
-            <div className='grid grid-cols-1 gap-3 md:grid-cols-2 justify-between'>
-                <button className='px-10 py-6 bg-gradient-to-r from-green-500 to-green-300 rounded hover:from-green-600 hover:to-green-400 active:from-green-800 active:to-green-500' onClick={handleGoogleLogin}>Login with Google</button>
-                <button className='px-10 py-6 bg-gradient-to-r from-blue-500 to-blue-300 rounded hover:from-blue-600 hover:to-blue-400 active:from-blue-800 active:to-blue-500' onClick={handleGithubLogin}>Login with Github</button>
+            <div className='flex justify-between'>
+                <button className='px-28 text-xl font-bold py-6 bg-gradient-to-r from-green-500 to-green-300 rounded hover:from-green-600 hover:to-green-400 active:from-green-800 active:to-green-500' onClick={handleGoogleLogin}>Login with Google</button>
+                <button className='px-28 font-bold text-xl py-6 bg-gradient-to-r from-blue-500 to-blue-300 rounded hover:from-blue-600 hover:to-blue-400 active:from-blue-800 active:to-blue-500' onClick={handleGithubLogin}>Login with Github</button>
             </div>
+            
         </div>
     );
 };
