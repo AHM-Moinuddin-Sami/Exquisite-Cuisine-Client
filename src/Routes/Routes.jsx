@@ -5,8 +5,8 @@ import Login from "../Login/Login";
 import Blog from "../Pages/Blog/Blog";
 import Register from "../Register/Register";
 import ChefPage from "../Pages/Homepage/ChefPage/ChefPage";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Homepage></Homepage>,
-                loader: () => fetch('http://localhost:5000/chefs')
+                loader: () => fetch('https://exquisite-cuisine-server-ahm-moinuddin-sami.vercel.app/chefs')
             },
             {
                 path: '/blog',
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: '/chefs/:id',
                 element: <PrivateRoute><ChefPage></ChefPage></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/chefs/${params.id}`)
+                loader: ({ params }) => fetch(`https://exquisite-cuisine-server-ahm-moinuddin-sami.vercel.app/chefs/${params.id}`)
             },
             {
                 path: "*",
