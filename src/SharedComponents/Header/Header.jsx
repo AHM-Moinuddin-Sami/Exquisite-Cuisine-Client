@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { FaRegUserCircle } from 'react-icons/fa';
 
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
-
-    console.log(user);
 
     const location = useLocation();
 
@@ -24,11 +23,20 @@ const Header = () => {
             {
                 user ?
                     <>
-                        <Link className='text-2xl text-white' onClick={logOut}><button>Logout</button></Link>
+                        <div className='flex justify-center items-center gap-[2vh]'>
+                            <div className={user.displayName? `tooltip hover:tooltip-open tooltip-bottom`:''} data-tip={user.displayName}>
+                                {
+                                    user.photoURL?
+                                    <img className='rounded-full w-10 h-10' src={user.photoURL} alt="" />
+                                    :
+                                    <FaRegUserCircle className='h-10 w-10 text-white'></FaRegUserCircle>
+                                }
+                            </div>
+                            <Link className='text-2xl text-white' onClick={logOut}><button>Logout</button></Link>
+                        </div>
                     </>
                     :
                     <div className='flex text-white text-2xl gap-3'>
-                        <h3>{user}</h3>
                         <Link to='/login'><button>Login</button></Link>
                     </div>
 

@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Register = () => {
 
     const [errorMessage, setErrorMessage] = useState(null);
+
+    const navigate = useNavigate();
 
     function formatFirebaseError(error) {
         let message = 'An error occurred.';
@@ -38,6 +40,7 @@ const Register = () => {
                 createdUser.displayName = name;
                 console.log(createdUser);
                 setErrorMessage('');
+                navigate("/");
             })
             .catch(error => {
                 console.log(error);
