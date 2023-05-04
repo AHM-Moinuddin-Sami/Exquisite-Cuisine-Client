@@ -26,7 +26,7 @@ const Recipes = ({ recipes }) => {
             </div>
             <div className="p-4">
                 <div className="mt-4">
-                    {<RecipeTabContent key={id} img={recipe_img} name={recipe_name} ingredients={ingredients} rating={rating} method={cooking_method}></RecipeTabContent>}
+                    {<RecipeTabContent key={id} id={id} img={recipe_img} name={recipe_name} ingredients={ingredients} rating={rating} method={cooking_method}></RecipeTabContent>}
                 </div>
             </div>
         </div>
