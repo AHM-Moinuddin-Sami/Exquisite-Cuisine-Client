@@ -6,12 +6,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAjFsvGgcRlAwjVYZ7q2DtPIVmiv_kNs1o",
-  authDomain: "exquisite-cuisine-client-ca1c8.firebaseapp.com",
-  projectId: "exquisite-cuisine-client-ca1c8",
-  storageBucket: "exquisite-cuisine-client-ca1c8.appspot.com",
-  messagingSenderId: "261320683847",
-  appId: "1:261320683847:web:c9eaf3db785e0c76d0dc62"
+  apiKey:import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId:import.meta.env.VITE_PROJECTID,
+  storageBucket:import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+  appId:import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
