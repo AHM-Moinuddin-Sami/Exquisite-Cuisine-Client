@@ -26,7 +26,7 @@ const Login = () => {
         return message;
     }
 
-    const { logIn } = useContext(AuthContext);
+    const { logIn, googleLogin, githubLogin } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -51,6 +51,37 @@ const Login = () => {
 
     }
 
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });
+                setErrorMessage('');
+            }
+            )
+            .catch(error => {
+                console.log(error);
+                setErrorMessage(formatFirebaseError(error));
+            })
+    }
+    const handleGithubLogin = () => {
+        githubLogin()
+            .then(result => {
+
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });
+                setErrorMessage('');
+            }
+            )
+            .catch(error => {
+                console.log(error);
+                setErrorMessage(formatFirebaseError(error));
+            })
+    }
+
     return (
         <div className='mx-auto w-11/12 md:w-1/2 mb-4 bg-white p-10 rounded mt-16'>
             <form onSubmit={handleLogin} className="form-control">
@@ -66,16 +97,21 @@ const Login = () => {
 
                 <br />
 
-                <button type='submit' className="btn">Login</button>
+                <button type='submit' className="btn mb-3">Login</button>
 
                 {
                     errorMessage &&
                     <h3 className='text-red-500'>{errorMessage}</h3>
-                }
+                }                
 
-                <h3><small>Don't have an account? <Link to='/register'>Register Now!</Link></small></h3>
+                <h3 className='mb-3'>Don't have an account? <Link className='text-blue-400' to='/register'>Register Now!</Link></h3>
 
             </form>
+
+            <div className='grid grid-cols-1 gap-3 md:grid-cols-2 justify-between'>
+                <button className='px-10 py-6 bg-gradient-to-r from-green-500 to-green-300 rounded hover:from-green-600 hover:to-green-400 active:from-green-800 active:to-green-500' onClick={handleGoogleLogin}>Login with Google</button>
+                <button className='px-10 py-6 bg-gradient-to-r from-blue-500 to-blue-300 rounded hover:from-blue-600 hover:to-blue-400 active:from-blue-800 active:to-blue-500' onClick={handleGithubLogin}>Login with Github</button>
+            </div>
         </div>
     );
 };
