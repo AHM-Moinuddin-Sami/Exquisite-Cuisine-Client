@@ -25,7 +25,7 @@ const Feautred = ({ featuredChef }) => {
                             </div>
                             <div className="w-full h-[2px] rounded mt-3 mb-6 bg-gradient-to-r from-red-200 via-orange-400 to-red-200"></div>
                             <p className="text-gray-700">{bio} He has over {number_of_recipes} recipes. Among them {recipes.length} recipes are catalogued in our site with {likes} likes. Being an experienced chef of {years_of_experience} years, his recipes are concise and to the point.</p>
-                            <Link className='text-center bg-red-400 py-6 rounded mx-auto text-xl font-semibold text-white w-10/12' to={`/${id}`}><button>Click here to check out his recipes.</button></Link>
+                            <Link className='text-center bg-red-400 py-6 rounded mx-auto text-xl font-semibold text-white w-10/12' to={`/chefs/${id}`}><button>Click here to check out his recipes.</button></Link>
                         </div>
                     </div>
                     <div className="md:w-1/2">

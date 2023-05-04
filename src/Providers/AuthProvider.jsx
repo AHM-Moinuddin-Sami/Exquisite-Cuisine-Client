@@ -45,8 +45,8 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             console.log('logged in user inside auth state observer', loggedUser)
             setUser(loggedUser);
-            if (currUser != null) {
-                currUser.providerData.forEach(profile => {
+            if (loggedUser != null) {
+                loggedUser.providerData.forEach(profile => {                    
                     console.log(profile.photoURL);
                 });
             }

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ChefBanner = ({chefDetails}) => {
-    const{chef_picture, chef_name, bio,number_of_recipes, recipes, likes, years_of_experience} = chefDetails;
+const ChefBanner = ({ chefDetails }) => {
+    const { chef_picture, chef_name, bio, number_of_recipes, recipes, likes, years_of_experience } = chefDetails;
 
     return (
-        <div className="card rounded-none lg:card-side bg-base-100 shadow-xl">
+        <div className="card rounded-none lg:card-side bg-base-100 shadow-xl">            
             <figure><img src={chef_picture} className='h-[70vh]' /></figure>
             <div className='w-8/12 pl-10 flex flex-col justify-center gap-3 text-xl'>
                 <h2 className="card-title text-3xl">{chef_name}</h2>

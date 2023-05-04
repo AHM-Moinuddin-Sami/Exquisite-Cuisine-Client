@@ -11,7 +11,6 @@ const Recipes = ({ recipes }) => {
     }
 
     const { id, recipe_name, ingredients, rating, cooking_method, recipe_img } = recipes[activeTab];
-    console.log(recipes);
 
     return (
         <div id='tab-content' className={`flex flex-col p-5 w-8/12 mx-auto my-10 border-2 bg-white rounded border-gray-300 h-contain`}>

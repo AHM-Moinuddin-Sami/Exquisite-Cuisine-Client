@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './Banner/Banner';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import Chefs from './Chefs/Chefs';
 import Featured from './Featured/Featured';
 

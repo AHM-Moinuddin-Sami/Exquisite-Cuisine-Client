@@ -5,6 +5,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 const Register = () => {
 
     const [errorMessage, setErrorMessage] = useState(null);
+    const [accepted, setAccepted] = useState(false);
 
     const navigate = useNavigate();
 
@@ -17,7 +18,7 @@ const Register = () => {
                 break;
             case 'auth/weak-password':
                 message = 'The password cannot be less than 6 characters.';
-                break; 
+                break;
         }
 
         return message;
@@ -48,8 +49,13 @@ const Register = () => {
             })
     }
 
+    const handleAccepted = (event)=>{
+        setAccepted(event.target.checked);
+    }
+
     return (
-        <div className='mx-auto w-11/12 md:w-1/2 bg-white p-10 mt-16 rounded'>
+        <div className='mx-auto w-11/12 md:w-1/2 bg-white p-8 mt-2 rounded'>
+            <h3 className='text-center font-semibold text-4xl'>Registration</h3>
             <form onSubmit={handleRegistration} className="form-control">
                 <label className="label">
                     <span className="label-text text-xl">Your Name</span>
@@ -71,14 +77,17 @@ const Register = () => {
                 </label>
                 <input name='photo' type="text" placeholder="Type here" className="input input-bordered" />
 
-                <br />
+                <div className="flex mt-3">
+                    <span className="mr-3">Accept Terms and Conditions</span>
+                    <input onClick={handleAccepted} type="checkbox" className="checkbox" />
+                </div>
 
-                <button type='submit' className="btn">Register</button>
+                <button type='submit' disabled={!accepted} className="btn mt-3">Register</button>
                 {
                     errorMessage &&
                     <h3 className='text-red-500'>{errorMessage}</h3>
                 }
-                <h3><small>Already have an account? <Link to='/login'>Login</Link></small></h3>
+                <h3 className='mt-3'>Already have an account? <Link className='text-blue-500' to='/login'>Login</Link></h3>
             </form>
         </div>
     );

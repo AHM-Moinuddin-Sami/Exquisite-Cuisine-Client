@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { FaRegUserCircle } from 'react-icons/fa';
@@ -6,6 +6,10 @@ import { FaRegUserCircle } from 'react-icons/fa';
 const Header = () => {
 
     const { user, logOut } = useContext(AuthContext);
+
+    const [photo, setPhoto] = useState(null);
+
+    
 
     const location = useLocation();
 
