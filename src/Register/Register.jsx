@@ -39,7 +39,6 @@ const Register = () => {
                 const createdUser = result.user;
                 createdUser.photoURL = photo;
                 createdUser.displayName = name;
-                console.log(createdUser);
                 setErrorMessage('');
                 navigate("/");
             })
@@ -60,22 +59,22 @@ const Register = () => {
                 <label className="label">
                     <span className="label-text text-xl">Your Name</span>
                 </label>
-                <input name='name' type="text" placeholder="Type here" className="input input-bordered" />
+                <input name='name' type="text" placeholder="Jane Doe" className="input input-bordered" />
 
                 <label className="label">
                     <span className="label-text text-xl">Your Email*</span>
                 </label>
-                <input name='email' type="email" required placeholder="Type here" className="input input-bordered" />
+                <input name='email' type="email" required placeholder="example@mail.com" className="input input-bordered" />
 
                 <label className="label">
                     <span className="label-text text-xl">Your Password*</span>
                 </label>
-                <input name='password' type="password" required placeholder="Type here" className="input input-bordered" />
+                <input name='password' type="password" required placeholder="Must be atleast 6 characters" className="input input-bordered" />
 
                 <label className="label">
                     <span className="label-text text-xl">Photo URL</span>
                 </label>
-                <input name='photo' type="text" placeholder="Type here" className="input input-bordered" />
+                <input name='photo' type="text" placeholder="http://www.imgurl.com" className="input input-bordered" />
 
                 <div className="flex mt-3">
                     <span className="mr-3">Accept Terms and Conditions</span>

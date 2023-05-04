@@ -34,12 +34,9 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password);
-
         logIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 navigate(from, { replace: true });
                 setErrorMessage('');
             })
@@ -56,7 +53,6 @@ const Login = () => {
             .then(result => {
 
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 navigate(from, { replace: true });
                 setErrorMessage('');
             }
@@ -71,7 +67,6 @@ const Login = () => {
             .then(result => {
 
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 navigate(from, { replace: true });
                 setErrorMessage('');
             }
@@ -88,12 +83,12 @@ const Login = () => {
                 <label className="label">
                     <span className="label-text text-xl">Your Email</span>
                 </label>
-                <input name='email' type="email" required placeholder="Type here" className="input input-bordered" />
+                <input name='email' type="email" required placeholder="example@mail.com" className="input input-bordered" />
 
                 <label className="label">
                     <span className="label-text text-xl">Your Password</span>
                 </label>
-                <input name='password' required type="password" placeholder="Type here" className="input input-bordered" />
+                <input name='password' required type="password" placeholder="Password here" className="input input-bordered" />
 
                 <br />
 
